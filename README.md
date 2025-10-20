@@ -184,4 +184,4 @@ tensorboard --logdir logs
 ##  Credits
 
 Created for testing **Deep Reinforcement Learning in a roguelike setting**, inspired by *The Binding of Isaac*.  
-Environment and training scripts by **[Your Name]**, using `gymnasium`, `pygame`, and `stable-baselines3`.
+Environment and training scripts by **[Teni Adegbite]**, using `gymnasium`, `pygame`, and `stable-baselines3`.
