@@ -1,0 +1,4 @@
+algo: imitation
+persona: survivor
+data_path: logs/human_sessions/session.json
+output_model: logs/ppo_bc_pretrained.zip
