@@ -1,4 +1,4 @@
-# IsaacLiteEnv 🧩
+# IsaacLiteEnv 
 
 `IsaacLiteEnv` is a lightweight, roguelike-style Gymnasium environment inspired by *The Binding of Isaac*.  
 It features simple discrete controls, procedural rooms, enemies, collectible boosts, and reward shaping designed for reinforcement learning experiments.
