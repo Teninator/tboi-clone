@@ -292,7 +292,8 @@ env.close()
 
 # Credits
 
-Developed by group ***Minecraft*** (Teni Adegbite, Jerico Robles, 
+Developed by group ***Minecraft*** (Teni Adegbite, Jerico Robles, Jugal Patel, Nadman Khan)
+
 
 
 
