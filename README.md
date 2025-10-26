@@ -81,26 +81,25 @@ isaac_lite_project/
 
 ##  Features
 
- **Gymnasium-compatible**  
-**Two Personas:** `explorer` and `survivor` (different reward logic)  
-**Discrete 9-action space** — move, shoot, idle  
-**Temporary powerups** (*speed*, *damage*)  
-**Boost-based rewards**  
-**Victory confetti / death fade animations**  
-**PPO and A2C support out of the box**
+- **Gymnasium-compatible**  
+- **Two Personas:** `explorer` and `survivor` (different reward logic)  
+- **Temporary powerups** (*speed*, *damage*)  
+- **Boost-based rewards**  
+- **Victory confetti / death fade animations**  
+- **PPO and A2C **
 
 ---
 
 
-## Setup Instructions
+### Setup Instructions
 
-### Clone and enter the project
+## 1. Clone and enter the project
 ```bash
 git clone https://github.com/teninator/isaac-lite.git
 cd isaac_lite_project
 ```
 
-Create and activate a virtual environment
+## 2. Create and activate a virtual environment
 
 ```
 python -m venv venv
@@ -110,14 +109,15 @@ On PowerShell (Windows)
 
 If you see:
 
-    running scripts is disabled on this system
+    "running scripts is disabled on this system"
 
 Run:
 
+```
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
 Then:
-
 ```
 venv\\Scripts\\Activate.ps1
 ```
@@ -128,7 +128,7 @@ On macOS/Linux
 source venv/bin/activate
 ```
 
-Install dependencies
+## 3. Install dependencies
 ```
 pip install -r requirements.txt
 ```
@@ -139,9 +139,9 @@ If you have trouble building pygame, use:
 pip install pygame==2.6.1
 ```
 
-Personas
+#### Personas
 
-The persona system modifies the reward logic to produce different agent behaviors.
+The persona system modifies the reward logic to produce different agent behaviours.
 Persona	Focus	Encouraged Behavior
 survivor	Defensive	Stay alive, avoid damage
 explorer	Curious	Move, explore rooms, collect powerups
@@ -158,7 +158,7 @@ python src/train.py --algo ppo --persona survivor
 python src/watch.py --persona explorer
 ```
 
-Training
+## Training
 
 You can quickly start PPO training with:
 
@@ -171,7 +171,7 @@ or a full configuration run:
 python src/train.py --algo ppo --timesteps 200000 --seed 7 --persona explorer --logdir logs/ppo_explorer
 ```
 
-Arguments
+## Arguments
 Flag	Description	Default
 ```--algo	Algorithm (ppo / a2c)	ppo
 --persona	Persona mode	explorer
@@ -193,7 +193,7 @@ Compatible with:
 
 Watching the Agent
 
-To visualize trained models:
+To visualize the trained models:
 
 ```
 python src/watch.py
@@ -205,15 +205,15 @@ You’ll be prompted to select from detected runs, or you can specify via:
 python src/watch.py --persona explorer
 ```
 
-Keyboard Shortcuts
-```Key	Action
-1 / 2 / 3	Switch run number
+## Keyboard Shortcuts
+```
+Key	Action
 ESC	Quit playback
 Action & Observation Spaces
 Action Space
 ```
 
-Observation Space
+## Observation Space
 ```
 Box(shape=(20,), dtype=float32)
 Range	Description
@@ -223,52 +223,48 @@ Range	Description
 [18:20]	Active Boosts ([damage, speed])
 ```
 
-Powerups
+## Powerups
 ```
 Type	Effect	Duration	Reward
 Speed	×1.5 player speed	200 ticks	+3
 Damage	×1.5 player damage	200 ticks	+5
 ```
 
-Evaluation & Imitation
-You can also evaluate or clone behavior from trained models:
-
+## Evaluation & Imitation
+You can also evaluate or clone behaviour from trained models:
 ```
 python src/eval.py
 python src/imitate.py
 ```
 
-Troubleshooting
-PowerShell “scripts disabled”
+## Troubleshooting
+**PowerShell “scripts disabled”**
 
 ```
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-Missing modules
-
+**Missing modules**
 ```
 pip install stable-baselines3==2.2.0 gymnasium pygame numpy
 ```
 
-Numpy core error
-
+**Numpy core error**
 ```
 pip install --upgrade numpy==1.26.4
 ```
 
-Confirm you’re in the correct venv
-
+**To confirm you’re in the correct venv**
 ```
 where python
 ```
 
-It should point to:
+It **should** point to:
 ```
 .../isaac_lite_project/venv/Scripts/python.exe
 ```
 
-Logging & Results
+## Logging & Results
 
 Training and evaluation logs are automatically saved under /logs.
 Launch TensorBoard to visualize performance:
@@ -277,7 +273,7 @@ Launch TensorBoard to visualize performance:
 tensorboard --logdir logs
 ```
 
-Example Manual Loop
+**Example Manual Loop**
 
 ```
 import gymnasium as gym
@@ -296,20 +292,7 @@ env.close()
 
 # Credits
 
-Developed by group ***Minecraft***
-
-Designed for experimenting with reinforcement learning in a roguelike world.
-
-```
-output_path = Path("/mnt/data/IsaacLiteEnv_README.md")
-output_path.write_text(readme_content)
-
-output_path
+Developed by group ***Minecraft*** (Teni Adegbite, Jerico Robles, 
 
 
-from pathlib import Path
-
-readme_content = """ 
-# Isaac Lite RL Environment
-```
 
