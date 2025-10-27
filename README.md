@@ -339,7 +339,7 @@ If events.out.tfevents files are missing:
 
 # Credits
 
-Developed by group ***Minecraft*** (Teni Adegbite, Jerico Robles, Jugal Patel, Nadman Khan)
+Developed by group ***Minecraft*** Teni Adegbite(100861337), Jerico Robles(100876635), Jugal Patel(100744586), Nadman Khan(100785940)
 
 
 
